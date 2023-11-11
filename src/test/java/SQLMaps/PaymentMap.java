@@ -15,5 +15,9 @@ public class PaymentMap {
     String created;
     String status;
     String transaction_id;
+
+    public String getStatus() {
+        return status;
+    }
 }
 

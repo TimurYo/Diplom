@@ -18,6 +18,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static data.SQLHelper.*;
+import static data.SQLHelper.getStatusWithPayment;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -69,8 +70,8 @@ public class ApiTest {
         $(byText("Продолжить")).click();
         $(byText("Успешно")).parent().$("div.notification__content").shouldBe(Condition.visible, Duration.ofSeconds(20)).shouldHave(Condition.exactText("Операция одобрена Банком."));
         var expectedStatus = "APPROVED";
-        //var actualStatus = getStatus23();
-        //assertEquals(expectedStatus, actualStatus);
+        var actualStatus = getStatusWithPayment();
+        assertEquals(expectedStatus, actualStatus);
     }
 
     @Test

@@ -55,8 +55,8 @@ public class SQLHelper {
         return null;
     }
 
-    /*
-    public static String getStatus23() {
+
+    public static String getStatusWithPayment() {
         var amountSQL = "SELECT * FROM payment_entity";
         try(var conn = getConnection()) {
             var status = runner.query(conn,amountSQL,new BeanHandler<>(PaymentMap.class));
@@ -66,7 +66,7 @@ public class SQLHelper {
         }
         return null;
     }
-     */
+
 }
 
 
